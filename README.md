@@ -14,5 +14,13 @@ This repository contains my solved SQL queries from [SQL-Practice.com](https://w
 - **Data Analysts & Engineers** – Practice complex queries.  
 - **Professionals** – Reference optimized SQL solutions.
 
+## SQL Solutions in README Files  
+For easy access, all **problem solutions** are documented in separate README files for each database:  
+
+- 📜 **[hospital.db Solutions](https://github.com/JaganSaravana07/sql-practice.com-Problem-Solutions/blob/main/hospital.db%20Solutions)** – Contains all SQL queries for `hospital.db`.  
+- 📜 **[Northwind.db Solutions](https://github.com/JaganSaravana07/sql-practice.com-Problem-Solutions/blob/main/northwind.md%20Solutions)** – Contains all SQL queries for `northwind.db`.  
+
+Simply navigate to the respective folder and open the README file to view the solutions.   
+
 ## Contributions
 Contributions, improvements, and discussions are always welcome! Feel free to fork this repository, improve the solutions, and create pull requests.
