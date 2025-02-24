@@ -3,11 +3,11 @@ This repository contains my solved SQL queries from [SQL-Practice.com](https://w
 
 ## The SQL problems are categorized based on difficulty levels:
 
-🟢 Easy – Basic SQL queries covering SELECT, WHERE, ORDER BY, LIMIT, etc.
+🟢 **Easy** – Basic SQL queries covering SELECT, WHERE, ORDER BY, LIMIT, etc.
 
-🟡 Medium – Intermediate SQL queries including JOIN, GROUP BY, HAVING, subqueries, etc.
+🟡 **Medium** – Intermediate SQL queries including JOIN, GROUP BY, HAVING, subqueries, etc.
 
-🔴 Hard – Advanced SQL queries requiring CTE, WINDOW FUNCTIONS, SELF-JOINS, optimizations, and complex subqueries.
+🔴 **Hard** – Advanced SQL queries requiring CTE, WINDOW FUNCTIONS, SELF-JOINS, optimizations, and complex subqueries.
 
 ## Who Can Benefit?  
 - **Students** – Learn SQL with practical examples.  
