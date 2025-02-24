@@ -5,7 +5,7 @@
 
 ## Solutions
 ### Level - EASY
-#### Questions 1 - 17
+#### Questions: 1 - 17
 1. Show first name, last name, and gender of patients whose gender is 'M'
 ```SQL
 SELECT first_name, last_name, gender from patients
