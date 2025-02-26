@@ -88,7 +88,35 @@ count(*) AS no_of_orders FROM orders
 group by order_year, order_month;
 ```
 
+### Level - HARD
+#### Questions: 1 - 2
+1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the required_date, "Late" if the order shipped late, "Not Shipped" if shipped_date is null.
 
+Order by employee last_name, then by first_name, and then descending by number of orders.
+```SQL
+SELECT e.first_name, e.last_name, count(o.order_id) AS num_orders,
+(
+  CASE
+  WHEN o.shipped_date <= o.required_date THEN 'On Time'
+  WHEN o.shipped_date > o.required_date THEN 'Late'
+  WHEN o.shipped_date IS NULL THEn 'Not Shipped'
+  END
+ ) AS shipped
+FROM orders o
+JOIN employees e ON e.employee_id = o.employee_id
+group by e.first_name, e.last_name, shipped
+order by last_name, first_name, num_orders DESC;
+```
+2. Show how much money the company lost due to giving discounts each year, order the years from most recent to least recent. Round to 2 decimal places
+```SQL
+SELECT year(o.order_date) AS order_year, 
+ROUND(SUM(p.unit_price * od.quantity * od.discount),2) AS discount_amount
+FROM order_details od
+JOIN orders o ON od.order_id = o.order_id
+JOIN products p ON od.product_id = p.product_id
+group by order_year
+ORDER by order_year DESC;
+```
 
 
 
