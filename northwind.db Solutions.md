@@ -57,7 +57,7 @@ SUM(discontinued) AS total_discontinued FROM products;
 ```
 
 ### Level - MEDIUM
-#### Questions: 1 - 9
+#### Questions: 1 - 4
 1. Show the ProductName, CompanyName, CategoryName from the products, suppliers, and categories table
 ```SQL
 SELECT p.product_name, s.company_name, c.category_name
