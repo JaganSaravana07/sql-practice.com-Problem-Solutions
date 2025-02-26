@@ -73,7 +73,7 @@ JOIN categories c On c.category_id = p.Category_id
 GROUP BY c.category_name
 ```
 3. Show the city, company_name, contact_name from the customers and suppliers table merged together.
-Create a column which contains 'customers' or 'suppliers' depending on the table it came from.
+   Create a column which contains 'customers' or 'suppliers' depending on the table it came from.
 ```SQL
 select City, company_name, contact_name, 'customers' as relationship 
 from customers
@@ -92,7 +92,7 @@ group by order_year, order_month;
 #### Questions: 1 - 2
 1. Show the employee's first_name and last_name, a "num_orders" column with a count of the orders taken, and a column called "Shipped" that displays "On Time" if the order shipped_date is less or equal to the required_date, "Late" if the order shipped late, "Not Shipped" if shipped_date is null.
 
-Order by employee last_name, then by first_name, and then descending by number of orders.
+   Order by employee last_name, then by first_name, and then descending by number of orders.
 ```SQL
 SELECT e.first_name, e.last_name, count(o.order_id) AS num_orders,
 (
