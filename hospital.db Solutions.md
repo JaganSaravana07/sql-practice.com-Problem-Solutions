@@ -321,6 +321,37 @@ SELECT patient_id, weight, height,
      ) AS isObese
 FROM patients
 ```
+4. All patients who have gone through admissions, can see their medical documents on our site. Those patients are given a temporary password after their first admission. Show the patient_id and temp_password.
+
+   The password must be the following, in order:
+   1. patient_id
+   2. the numerical length of patient's last_name
+   3. year of patient's birth_date
+```SQL
+SELECT distinct p.patient_id,
+concat(p.patient_id,len(last_name),year(birth_date)) AS temp_password
+FROM patients p
+JOIN admissions a ON a.patient_id = p.patient_id;
+```
+5. We are looking for a specific patient. Pull all columns for the patient who matches the following criteria:
+- First_name contains an 'r' after the first two letters.
+- Identifies their gender as 'F'
+- Born in February, May, or December
+- Their weight would be between 60kg and 80kg
+- Their patient_id is an odd number
+- They are from the city 'Kingston'
+```SQL
+SELECT * FROM patients
+WHERE first_name LIKE '__r%' AND gender = 'F' AND 
+month(birth_date) IN (2, 5, 12) AND
+weight between 60 AND 80 AND patient_id % 2 = 1
+AND city = 'Kingston';
+```
+6. Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form.
+```SQL
+select concat(ROUND(SUM(gender = 'M')/ cast(count(*) AS float), 4) * 100, '%')
+AS percent_of_male_patients FROM patients
+```
 
 
 
