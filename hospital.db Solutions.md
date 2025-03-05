@@ -352,6 +352,12 @@ AND city = 'Kingston';
 select concat(ROUND(SUM(gender = 'M')/ cast(count(*) AS float), 4) * 100, '%')
 AS percent_of_male_patients FROM patients
 ```
+7. Sort the province names in ascending order in such a way that the province 'Ontario' is always on top.
+```SQL
+SELECT province_name FROM province_names
+ORDER BY province_name = 'Ontario' desc, province_name;
+```
+8. 
 
 
 
