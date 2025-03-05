@@ -366,7 +366,14 @@ LEFT JOIN admissions a ON d.doctor_id = a.attending_doctor_id
 group by doctor_name, selected_year
 order by doctor_id, selected_year
 ```
-9. 
+9. For each day display the total amount of admissions on that day. Display the amount changed from the previous date.
+```SQL
+SELECT admission_date, COUNT(*) AS admission_day, 
+COUNT(admission_date) - LAG(COUNT(admission_date)) OVER(ORDER BY admission_date) AS admission_count_change
+FROM admissions
+group by admission_date
+```
+10. 
 
 
 
