@@ -385,7 +385,16 @@ JOIN admissions a ON a.patient_id = p.patient_id
 JOIN doctors d ON d.doctor_id = a.attending_doctor_id
 WHERE diagnosis = 'Epilepsy' AND d.first_name = 'Lisa';
 ```
-11. 
+11. Each admission costs $50 for patients without insurance, and $10 for patients with insurance. All patients with an even patient_id have insurance.
+
+    Give each patient a 'Yes' if they have insurance, and a 'No' if they don't have insurance. Add up the admission_total cost for each has_insurance group.
+```SQL
+SELECT 'No' as has_insurance, COUNT(*) * 50 AS cost_as_insurance
+FROM admissions WHERE patient_id % 2 == 1 group by has_insurance
+UNION
+SELECT 'Yes' AS has_insurance, count(*) * 10 AS cost_as_insurance
+FROM admissions WHERE patient_id % 2 == 0 group by has_insurance
+```
 
 
 
